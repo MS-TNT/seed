@@ -1,0 +1,21 @@
+server:
+  port: 5000
+  postgresql:
+    host: 175.178.222.252
+    port: 5432
+    database: seed
+    user: seed
+    password: 123456
+  redis:
+    host: 175.178.222.252
+    port: 6379
+    password: 123456
+    db: 0
+
+worker:
+  tag: seed_worker
+  defaultTimeoutSec: 30 #默认超时时间
+  workerQueueName: seed_queue
+  resultsExpireInSec: 3600
+  brokerAddr: "redis://123456@10.65.138.160:6379/2"
+  resultBackendAddr: "redis://123456@10.65.138.160:6379/2"
