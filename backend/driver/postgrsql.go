@@ -19,7 +19,8 @@ func NewPostgreSql(host, user, pwd, dbname string, port int32) *PostgreSql {
 	if err != nil {
 		panic(err)
 	}
-	err = db.AutoMigrate(&models.DataSource{})
+	err = db.AutoMigrate(&models.User{}, &models.ResourceGroup{}, &models.DataSource{}, &models.Query{},
+		&models.QueryResult{}, &models.Dashboard{}, &models.Visualization{}, &models.Widget{})
 	if err != nil {
 		panic(err)
 	}
